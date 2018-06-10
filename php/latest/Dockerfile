@@ -1,7 +1,7 @@
-# Based on docker image php
+# Based on docker image php:fpm
 # Added softwares lists:composer
 
-FROM php
+FROM php:fpm
 MAINTAINER yin5th "541304803@qq.com"
 
 # Update package lists
@@ -11,6 +11,3 @@ RUN apt-get update
 RUN curl -sS https://getcomposer.org/installer | php && \
 mv composer.phar /usr/local/bin/composer && \
 composer config -g repo.packagist composer https://packagist.phpcomposer.com
-
-
- 
