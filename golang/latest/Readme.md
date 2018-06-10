@@ -7,8 +7,9 @@
 ``` go
 docker cp container-name:/usr/local/go $HOME/code/goroot
 ```
--  上述中container-name是容器的名词或在id,后根容器中goroot的路径.不同安装可能不一样.进入容器go env查看
--  最后跟要复制到宿主机的路径
+  -  上述中container-name是容器的名词或在id,后根容器中goroot的路径.不同安装可能不一样.进入容器go env查看
+  -  最后跟要复制到宿主机的路径
+
 2.将宿主机中从容器中复制出来的goroot重新挂载到容器:
 ``` go
 docker run --name golang -p 8088:8088 -v $HOME/code/goroot:/usr/local/go -v $HOME/code/go:/go --privileged=true -it yin5th/golang /bin/bash
